@@ -41,9 +41,9 @@ streamlit.dataframe(fruityvice_normalized)
 
 import snowflake.connector
 
-my_cnx = snowflake.connector.connect(**streamlit.secrets[USER, PASSWORD, ACCOUNT, WAREHOUSE, DATABASE, SCHEMA])
+my_cnx = snowflake.connector.connect(**streamlit.secrets[USER= Hrisim, PASSWORD= PA55word1!, ACCOUNT=zg52538, WAREHOUSE=compute_wh, DATABASE=pc_rivery_db, SCHEMA=public])
 my_cur = my_cnx.cursor()
-my_cur.execute("SELECT CURRENT_USER(hrisim), CURRENT_ACCOUNT(zg52538), CURRENT_REGION(xy12345.europe-west2.gcp)")
+my_cur.execute("SELECT CURRENT_USER(), CURRENT_ACCOUNT(), CURRENT_REGION()")
 my_data_row = my_cur.fetchone()
 streamlit.text("Hello from Snowflake:")
 streamlit.text(my_data_row)
